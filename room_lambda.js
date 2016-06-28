@@ -39,7 +39,7 @@ var processEvent = function(event, context) {
     var user = params.user_name;
     var command = params.command;
     var channel = params.channel_name;
-    var commandText = params.text;
+    var commandText = params.text.toUpperCase();
 
     var response = {
         "response_type": "in_channel",
