@@ -40,6 +40,7 @@ var processEvent = function(event, context) {
     var command = params.command;
     var channel = params.channel_name;
     var commandText = params.text.toUpperCase();
+    commandText = commandText.shift();
 
     var response = {
         "response_type": "in_channel",
