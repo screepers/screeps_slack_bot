@@ -41,7 +41,7 @@ var processEvent = function(event, context) {
     var channel = params.channel_name;
     var commandText = params.text.toUpperCase();
     commandText = commandText.split(" ");
-    room = commandText.shift();
+    var room = commandText.shift();
     var description = commandText.join(" ");
 
     var response = {
