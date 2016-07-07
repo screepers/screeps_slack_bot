@@ -39,14 +39,14 @@ var processEvent = function(event, context) {
     var user = params.user_name;
     var command = params.command;
     var channel = params.channel_name;
-    var commandText = params.text.toUpperCase();
+    var commandText = params.text;
     commandText = commandText.split(" ");
-    var room = commandText.shift();
+    var room = commandText.shift().toUpperCase();
     var description = commandText.join(" ");
 
     var response = {
         "response_type": "in_channel",
-        "text": user+ " wants to share room: <https://screeps.com/a/#!/room/"+room+"|"+room+(description ? "" : " "+description)+">"
+        "text": user+ " wants to share room: <https://screeps.com/a/#!/room/"+room+"|"+room+(description ?" "+description : "")+">"
     };
 
     context.succeed(response);
